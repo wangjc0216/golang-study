@@ -1,6 +1,7 @@
  # SOCKET连接
 
-
+## 疑问
+- [ ]  如何使用Golang创建socket，像python3例子一样
 
 ## 问题引发的实践
 
