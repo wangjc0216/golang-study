@@ -113,6 +113,9 @@ go mod graph
 
 ## 3.Go1.16 Modules新特性
 
+```
+go env -w GO111MODULE=auto
+```
 
 
 ## 相关参考
