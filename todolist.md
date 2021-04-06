@@ -13,3 +13,5 @@ Slice values are deeply equal when all of the following are true: they are both 
 - [ ] base64 为什么 编写方式 处于什么样的用途，为什么不直接提供一个base64 的函数呢？ 而是要初始化一个对象
 
 - [ ] go的条件编译
+
+- [] []byte(...)与（...）.([]byte)有什么区别？
