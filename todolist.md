@@ -14,4 +14,10 @@ Slice values are deeply equal when all of the following are true: they are both 
 
 - [ ] go的条件编译
 
-- [] []byte(...)与（...）.([]byte)有什么区别？
+- [ ] []byte(...)与（...）.([]byte)有什么区别？
+
+
+- [x] 发现服务总是 exit 1 退出？ 
+```
+后来发现是因为使用logger.Fatalf()函数来打印日志，Fatalf通常在打印之后就会将程序退出，所以除了单元测试不要使用Fatalf()函数
+```
