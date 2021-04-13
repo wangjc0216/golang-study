@@ -15,6 +15,7 @@
 
 ## 学习资料
 
+[GopherChina 会议历年资料](https://github.com/gopherchina/conference)
 
 [Go官网](https://golang.org/pkg/)
 
