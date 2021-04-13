@@ -28,3 +28,4 @@
 
 [Go官方推荐的优秀项目合集](https://github.com/golang/go/wiki/Projects#file-systems)
 
+[Effective Go](https://golang.org/doc/effective_go#constants)
