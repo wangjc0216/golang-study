@@ -27,3 +27,4 @@
 
 [Go官方推荐的优秀项目合集](https://github.com/golang/go/wiki/Projects#file-systems)
 
+[dave cheney博客： Go实践](https://dave.cheney.net/practical-go)
