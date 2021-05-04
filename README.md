@@ -15,8 +15,7 @@
 
 ## 学习资料
 
-
-[Go官网](https://golang.org/pkg/)
+[GopherChina 会议历年资料](https://github.com/gopherchina/conference)
 
 [Go的使用案例及对应的软件包](https://pkg.go.dev/)
 >Go官网对go.dev网站的描述：
@@ -24,7 +23,16 @@
 >Today we are launching go.dev, a new hub for Go developers, to help answer those questions. There you will find a wealth of learning resources to get started with the language, featured use cases, and case studies of companies using Go.
 >from https://blog.golang.org/go.dev
 
-
 [Go官方推荐的优秀项目合集](https://github.com/golang/go/wiki/Projects#file-systems)
 
-[dave cheney博客： Go实践](https://dave.cheney.net/practical-go)
+
+**[dave cheney博客： Go实践](https://dave.cheney.net/practical-go)**
+
+**[Effective Go](https://golang.org/doc/effective_go#constants)**
+
+**[Go官方文档Document](https://golang.org/doc/)**
+
+**[1024无锁编程博客](https://www.1024cores.net/)**
+
+[go-advice](https://github.com/cristaloleg/go-advice)
+
