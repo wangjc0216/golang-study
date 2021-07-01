@@ -38,3 +38,53 @@ go test
 ```shell
 go test -bench=.
 ```
+
+
+
+
+
+##  Example Test
+
+REF: https://blog.golang.org/examples
+
+Example是可选编译的，作为test suite的一部分。
+
+
+
+Example函数写在_test.go文件中，同时以Example作为开头。
+
+
+
+```
+package stringutil_test
+
+import (
+    "fmt"
+
+    "github.com/golang/example/stringutil"
+)
+
+func ExampleReverse() {
+    fmt.Println(stringutil.Reverse("hello"))
+    // Output: olleh
+}
+```
+
+我们通过执行 `go test -v  -test.run ^ExampleReverse$` -不需要额外的参数就可以执行Example参数。
+
+Example测试用例通过output来判断ExampleTest是否通过测试。
+
+### Example 命名规则
+
+```
+func ExampleFoo()     // documents the Foo function or type
+func ExampleBar_Qux() // documents the Qux method of type Bar
+func Example()        // documents the package as a whole
+```
+
+
+
+
+
+
+
