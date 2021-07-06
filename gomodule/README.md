@@ -147,6 +147,11 @@ pkg主要有两个文件夹，分别为cache和具体版本的源码，cache中�
 
 如果想要在本地运行private proxy，可以参考[Athens](https://docs.gomods.io/zh/intro/) ,Authens可以对Module进行缓存，防止公网上数据丢失。
 
+Athens可以通过`docker run -p '3030:3000' --name modserver -d  gomods/athens:latest`启动容器，Athens可以将Modules
+缓存下来，防止Module被删除(如github具体仓库被删除)的情况，同时将GOPROXY修改为`localhost:3030`，那么`go get`的时候就会现在从localhost:3030
+请求Module数据，如果请求不到，modserver会从官方仓库中去获取Module并缓存本地。
+
+
 
 
 
