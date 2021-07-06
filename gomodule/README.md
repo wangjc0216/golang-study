@@ -111,7 +111,47 @@ go mod graph
 
 ### 
 
-## 3.Go1.16 Modules新特性
+## 3.Modules一些http请求逻辑
+
+### 查看Modules的版本列表
+
+```
+curl -L https://goproxy.cn/github.com/prometheus/prometheus/@v/list  | sort
+```
+会返回这个module的版本列表。
+
+
+### 查看Modules版本时间
+```
+curl -L https://goproxy.cn/github.com/prometheus/prometheus/@v/v2.5.0-rc.2+incompatible.info
+```
+查看Module具体版本时间
+
+### 查看Module指定版本的go.mod文件
+```go
+curl -L https://goproxy.cn/github.com/prometheus/prometheus/@v/v2.5.0-rc.2+incompatible.mod
+```
+当然有一些是有tag，也是在合法的服务器上(如github)进行部署，但是该tag并没有使用Module来管理该Module。所以返回的可能就是如下： 
+```go
+module github.com/prometheus/prometheus
+```
+
+### 下载Module文件
+```go
+curl -L -O  https://goproxy.cn/github.com/prometheus/prometheus/@v/v2.5.0-rc.2+incompatible.zip
+```
+这会下载该版本的Module源码zip包，解压后可以看见 `github.com/prometheus/prometheus@v2.5.0-rc.2+incompatible/ …`
+
+
+pkg主要有两个文件夹，分别为cache和具体版本的源码，cache中会包括 .info .mod .zip list,cache中还包括sumdb
+
+如果想要在本地运行private proxy，可以参考[Athens](https://docs.gomods.io/zh/intro/) ,Authens可以对Module进行缓存，防止公网上数据丢失。
+
+
+
+
+
+## 4.Go1.16 Modules新特性
 
 ```
 go env -w GO111MODULE=auto
