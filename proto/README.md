@@ -17,7 +17,9 @@ sudo chown  $(whoami) /usr/local/bin/protoc
 go get github.com/golang/protobuf/protoc-gen-go
 
 //安装低版本插件可以在任意一个Module中执行,这样就可以在$GOAPTH/bin/ 找到对应版本的执行文件了。
-go  get github.com/golang/protobuf/protoc-gen-go@v1.1.0
+//刚开始的时候，使用v1.1.0版本，synax为3的proto只会生成synax为2的Go代码。是有问题的。
+//后来升级到v1.3.0后 问题解决了。synax为3的proto会生成synax为3的Go代码。
+go  get github.com/golang/protobuf/protoc-gen-go@v1.3.0
 ```
 
 ## Example
@@ -27,3 +29,4 @@ go  get github.com/golang/protobuf/protoc-gen-go@v1.1.0
 protoc --proto_path=. --go_out=. test.proto
 ```
 就可以生成pb.go文件，同时还可以与proto文件一个层级。如果protoc-gen-go 的版本超过v1.3.5的话，可能不能在一个层级了。
+
