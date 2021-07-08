@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+option go_package = "";
+package testproto;
+
+message NamedStruct {
+  string name = 1;
+  google.protobuf.Struct definition = 2;
+  google.protobuf.Timestamp last_modified = 3;
+}
