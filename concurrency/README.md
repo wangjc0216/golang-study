@@ -130,6 +130,21 @@ func main(){
 }
 ```
 
+3) myengine项目
+```go
+func main(){
+	...
+	//通过监听信号实现优雅退出
+	go func() {
+		sigs := make(chan os.Signal, 1)
+		signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+		sig := <-sigs
+		level.Info(logger).Log("msg", "receive signal, stoping", "signal", sig)
+		reloader.Stop()
+	}()
+	...
+}
+```
 
 
 ## Reference
@@ -137,3 +152,5 @@ func main(){
 [Concurrency Trap #2: Incomplete Work](https://www.ardanlabs.com/blog/2019/04/concurrency-trap-2-incomplete-work.html)
 
 [Go并发编程(一)goroutine](https://lailin.xyz/post/go-training-week3-goroutine.html)
+
+[myruleengine](https://github.com/huangwei2013/myruleengine)
