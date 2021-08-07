@@ -152,6 +152,7 @@ Athens可以通过`docker run -p '3030:3000' --name modserver -d  gomods/athens:
 请求Module数据，如果请求不到，modserver会从官方仓库中去获取Module并缓存本地。
 
 
+**Go.sum 中包括zip包和go.mod文件的base64编码的sha256哈希值。**
 
 
 
