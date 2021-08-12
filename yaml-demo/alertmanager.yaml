@@ -1,0 +1,44 @@
+route:
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: 'web.hook'
+  routes:
+    - match:
+        alerttype: department
+      continue: true
+      routes:
+        - matchers:
+            - department = wop
+          group_by:
+            - alertname
+          receiver: wop_dep
+          routes:
+            - matchers:
+
+            - matchers:
+                - department = wop
+                - alertname = group_offline
+              receiver: wop_simple_dep
+              continue: true
+            - matchers:
+                - department = wop
+                - alertname = group_offline
+                - level = high
+              receiver: wop_high_dep
+              continue: true
+        - matchers:
+            - department = data
+          group_by:
+            - alertname
+          receiver: data_dep
+receivers:
+  - name: 'web.hook'
+
+  - name: 'wop_simple_dep'
+
+  - name: 'wop_high_dep'
+
+  - name: 'data_dep'
+
+  - name: 'wop_dep'
